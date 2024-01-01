@@ -42,6 +42,45 @@ const (
 	TokenTypeSpace              TokenType = "space"
 )
 
+func (t TokenType) ToOperator() Operator {
+	switch t {
+	case TokenTypeEqual:
+		return OperatorEqual
+	case TokenTypeNotEqual:
+		return OperatorNotEqual
+	case TokenTypeGreaterThan:
+		return OperatorGreaterThan
+	case TokenTypeGreaterThanOrEqual:
+		return OperatorGreaterThanOrEqual
+	case TokenTypeLessThan:
+		return OperatorLessThan
+	case TokenTypeLessThanOrEqual:
+		return OperatorLessThanOrEqual
+	case TokenTypeBlank:
+		return OperatorBlank
+	case TokenTypeNotBlank:
+		return OperatorNotBlank
+	case TokenTypeContain:
+		return OperatorContain
+	case TokenTypeNotContain:
+		return OperatorNotContain
+	case TokenTypeStartWith:
+		return OperatorStartWith
+	case TokenTypeNotStartWith:
+		return OperatorNotStartWith
+	case TokenTypeEndWith:
+		return OperatorEndWith
+	case TokenTypeNotEndWith:
+		return OperatorNotEndWith
+	case TokenTypeNotIn:
+		return OperatorNotIn
+	case TokenTypeIn:
+		return OperatorIn
+	}
+
+	return OperatorUnknown
+}
+
 func (t TokenType) IsFieldTokenType() bool {
 	return utils.IsInAny(t, []TokenType{
 		TokenTypeField,
