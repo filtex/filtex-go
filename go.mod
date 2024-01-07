@@ -2,7 +2,10 @@ module github.com/filtex/filtex-go
 
 go 1.19
 
-require github.com/stretchr/testify v1.8.4
+require (
+	github.com/stretchr/testify v1.8.4
+	go.mongodb.org/mongo-driver v1.13.1
+)
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
